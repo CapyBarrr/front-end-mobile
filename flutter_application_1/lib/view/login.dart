@@ -1,63 +1,57 @@
 import 'package:flutter/material.dart';
+import 'register.dart';
 
 class LoginPage extends StatelessWidget {
+  const LoginPage({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SafeArea(
+      backgroundColor: Colors.white,
+      body: Padding(
+        padding: const EdgeInsets.all(20.0),
         child: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text(
-                'Glamping',
-                style: TextStyle(
-                  fontSize: 40,
-                  fontWeight: FontWeight.bold,
-                  // Tambahkan style font yang Anda inginkan di sini
-                ),
+                'Login Page',
+                style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
               ),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
               TextField(
                 decoration: InputDecoration(
-                  labelText: 'Username',
-                  filled: true,
-                  fillColor: Colors.grey[200],
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(10),
-                    borderSide: BorderSide.none,
-                  ),
+                  labelText: 'Email',
+                  border: OutlineInputBorder(),
                 ),
               ),
-              SizedBox(height: 10),
+              const SizedBox(height: 10),
               TextField(
                 obscureText: true,
                 decoration: InputDecoration(
                   labelText: 'Password',
-                  filled: true,
-                  fillColor: Colors.grey[200],
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(10),
-                    borderSide: BorderSide.none,
-                  ),
+                  border: OutlineInputBorder(),
                 ),
               ),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
               ElevatedButton(
                 onPressed: () {
-                  // Tambahkan logika ketika tombol "Login" ditekan
-                  // Misalnya, navigasi ke halaman home
-                  Navigator.pushNamed(context, '/home');
+                  // Handle login
                 },
-                child: Text('Login'),
+                child: const Text('Login'),
               ),
+              const SizedBox(height: 10),
               TextButton(
                 onPressed: () {
-                  // Tambahkan logika ketika tombol "Create account?" ditekan
-                  // Misalnya, navigasi ke halaman registrasi
-                  Navigator.pushNamed(context, '/register');
+                  // Navigasi ke halaman Register
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const RegisterPage(),
+                    ),
+                  );
                 },
-                child: Text('Create account?'),
+                child: const Text("Don't have an account? Register here."),
               ),
             ],
           ),
