@@ -1,9 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/main.dart';
 import 'register.dart';
 
-class LoginPage extends StatelessWidget {
+
+
+class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
 
+  @override
+  State<LoginPage> createState() => _LoginPageState();
+}
+
+class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -40,7 +48,11 @@ class LoginPage extends StatelessWidget {
               const SizedBox(height: 20),
               ElevatedButton(
                 onPressed: () {
-                  // Handle login
+                  // Navigasi ke halaman utama setelah login
+                  Navigator.pushReplacement(
+                    context,
+                    MaterialPageRoute(builder: (context) => const MainPage()),
+                  );
                 },
                 child: const Text('Login'),
               ),

@@ -7,6 +7,7 @@ class RegisterPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(),
       backgroundColor: Colors.white,
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 20.0),
@@ -55,7 +56,7 @@ class RegisterPage extends StatelessWidget {
                 const SizedBox(height: 20),
                 ElevatedButton(
                   onPressed: () {
-                    Navigator.pop(context); // Kembali ke halaman login
+                    Navigator.pop(context); // Kembali ke halaman login setelah registrasi
                   },
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.grey,
