@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/view/glamping_detail.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -135,7 +136,17 @@ class HomePage extends StatelessWidget {
           // Book Now Button
           TextButton(
             onPressed: () {
-              // Aksi ketika tombol "Book Now" ditekan
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => GlampingDetailPage(
+                    address: address,
+                    title: title,
+                    imageUrl: imageUrl,
+
+                  )
+                )
+              );     // Aksi ketika tombol "Book Now" ditekan
             },
             style: TextButton.styleFrom(
               backgroundColor: Colors.black,
